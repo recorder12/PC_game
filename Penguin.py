@@ -4,9 +4,10 @@ import pygwidgets
 
 
 # Penguin class
-class Penguin():
+class Penguin:
 
-    def __init__(self, window, windowWidth, windowHeight, path, xSpeed=12):
+    def __init__(self, window, windowWidth, windowHeight, path, xSpeed, height, 
+    melting_level_1, melting_level_2, melting_level_3, penguin_speed, penguin_speed_2, penguin_speed_3):
 
         self.window = window  # remember the window, so we can draw later
         self.windowWidth = windowWidth
@@ -26,14 +27,34 @@ class Penguin():
         self.halfWidth = self.width / 2
 
         self.x = self.windowWidth / 2
-        self.y = windowHeight - self.height - 20
+        self.y = windowHeight - self.height - 90 - height
         self.maxX = self.windowWidth - self.width
         self.image.setLoc((self.x, self.y))
 
-        # Choose speed in the x direction
-        self.xSpeed = xSpeed
+        self.ml1 = melting_level_1
+        self.ml2 = melting_level_2
+        self.ml3 = melting_level_3
 
-    def move(self, leftOrRight):
+        self.ps = penguin_speed
+        self.ps2 = penguin_speed_2
+        self.ps3 = penguin_speed_3
+        # Choose speed in the x direction
+#        self.xSpeed = xSpeed
+
+    def move(self, leftOrRight, score):
+        # change speed with score
+        # if score >=
+        if score < self.ml3:
+            self.xSpeed = self.ps3 
+        else:
+            if score <= self.ml2 and score > self.ml3:
+                self.xSpeed = self.ps2 
+            else:
+                if score < 0:
+                    self.xSpeed = self.ps
+                else:
+                    self.xSpeed = self.ps
+
         # add code here to move the basket and restrict it to stay in the window
         if leftOrRight == "left":
             self.x = self.x - \
