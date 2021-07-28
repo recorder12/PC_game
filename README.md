@@ -1,21 +1,21 @@
-Penguin Coin to the moon Game
+# Penguin Coin to the moon Game
     
     Cute penguin simple game to alert people to environmental destruction. 
     This game was developed in the hackathon organized by SoCal K-GROUP and 
     consulate general of the republic of korea in LA. 
 
 
-Quick Start
+# Quick Start
         
         python Main.py
 
-Dependencies
+# Dependencies
     
     - Python 3
     - Pygame 2.0
     
 
-Manual to play
+# Manual to play
     
     - Left, Right Movement : You can move by pressing the left and right keys.
     
